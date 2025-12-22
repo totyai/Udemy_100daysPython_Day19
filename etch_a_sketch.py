@@ -12,11 +12,30 @@ import turtle as t
 sketch = t.Turtle()
 screen = t.Screen()
 
+def forward():
+    sketch.fd(20)
+
+def backward():
+    sketch.bk(20)
+
+def turn_right():
+    sketch.right(10)
+
+def turn_left():
+    sketch.left(10)
+
+def clear():
+    sketch.reset()
 
 
 
 def main():
-    t.listen()
+    screen.listen()
+    screen.onkey(key="w",fun=forward)
+    screen.onkey(key="s", fun=backward)
+    screen.onkey(key="a", fun=turn_left)
+    screen.onkey(key="d", fun=turn_right)
+    screen.onkey(key="c", fun=clear)
     screen.exitonclick()
 
 
